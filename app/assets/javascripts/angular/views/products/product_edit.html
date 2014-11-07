@@ -1,0 +1,42 @@
+<script type="text/ng-template" id="EditModalContent.html">
+  <div class="modal-header">
+    <h3 class="modal-title">Edit Product </h3>
+  </div>
+<div class="modal-body">
+    
+<div class="row">
+    <div class="col-md-12">
+      <div class="form-group pull-center">
+          <div  style="padding:20px; border-radius:5px;">
+             <form role="form" name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
+              <div class="form-group">
+                <label>Product Name</label>
+                <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
+                <input type="hidden" name="id" class="form-control" ng-model="product.id">
+                <input type="text" name="name" class="form-control" ng-model="product.name" required>
+                <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">You name is required.</p>
+              </div>
+
+              <div class="form-group">
+                <label>Price</label>
+                <div class="form-group" ng-class="{ 'has-error' : userForm.price.$invalid && !userForm.price.$pristine }">
+                <input type="number" name="price" class="form-control" ng-model="product.price" required>
+                <p ng-show="userForm.price.$invalid && !userForm.price.$pristine" class="help-block">invalid price</p>
+              </div>
+
+
+              <div class="form-group">
+                <label>Description</label>
+                <div class="form-group" ng-class="{ 'has-error' : userForm.description.$invalid && !userForm.description.$pristine }">
+                <textarea name="description" class="form-control" ng-model="product.description" required rows="6"> </textarea>
+                <p ng-show="userForm.description.$invalid && !userForm.description.$pristine" class="help-block">Description is Required</p>
+              </div>
+
+              <div class="modal-footer">
+              <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid" ng-click="ok()">Submit</button>
+              <button type="button" class="btn btn-default"  
+              ng-click="cancel()">Close</button>
+            </form>     
+          </div>
+      </div>
+</script>
