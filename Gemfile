@@ -19,6 +19,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'angularjs-rails'
 gem 'pundit'
+gem 'rspec-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
