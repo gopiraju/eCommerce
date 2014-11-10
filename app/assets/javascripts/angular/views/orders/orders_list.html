@@ -1,0 +1,60 @@
+<script type="text/ng-template" id="ListOrderModalContent.html">
+  <div class="modal-header">
+    <h3 class="modal-title">Place Order</h3>
+  </div>
+ 
+       <table class="table table-hover table-striped table-bordered">
+    <thead align="center">
+        <tr>
+            <td>Name</td>
+            <td>Price</td>
+            <td>Delete Order</td>
+        </tr>
+    </thead>
+    <tbody align="center">
+        <tr ng-repeat="product in products">
+            <td>{{ product.name }}</td>
+            <td>{{ product.price }}</td>
+            <td><a ui-sref=".placeOrder({ id : product.id  })"> 
+                    <button  class="btn"  class="btn btn-primary btn-lg">
+                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                     </button>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>   
+<div class="modal-footer">
+    <button type="button" class="btn btn-warning" ng-click="cancel()">Close</button>
+</div>   
+</script>
+
+
+<!-- <h3>Welcome to your dashboard</h3>
+ <div ng-controller="ProductController">
+  <table class="table table-hover table-striped table-bordered">
+    <thead align="center">
+        <tr class="info">
+            <td>Name</td>
+            <td>Description</td>
+            <td>Price</td>
+            <td>Delete Order</td>
+        </tr>
+    </thead>
+    <tbody align="center">
+        <tr ng-repeat="product in products">
+            <td>{{ product.name }}</td>
+            <td>{{ product.description }}</td>
+            <td>{{ product.price }}</td>
+            <td><a ui-sref=".placeOrder({ id : product.id  })"> 
+                    <button  class="btn"  class="btn btn-primary btn-lg">
+                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                     </button>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<div ui-view="container"></div>
+<div ui-view="container_edit"></div> -->

@@ -55,6 +55,8 @@
   <div><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation, autocomplete: "off", :class=>"form-control" %></div><br />
 
+  <div><%= f.label :role_id %><%= f.select :role_id, options_for_select([["Seller", ""], "Buyer"]), :class=>"selectpicker" %><br />
+
   <div><%= f.submit "Sign up", :class => "btn btn-default" %></div>
 <% end %>
 </div></div></div>

@@ -15,7 +15,8 @@ angular.module('eCommerce').config(function($stateProvider, $urlRouterProvider) 
             url: '/products',
             views: {
             'container': {
-              templateUrl: "/assets/angular/views/products/products.html"
+              templateUrl: "/assets/angular/views/products/products.html",
+              controller: 'ProductController'
               }
             }
           })
@@ -46,6 +47,33 @@ angular.module('eCommerce').config(function($stateProvider, $urlRouterProvider) 
                   controller: 'DeleteController'
                   }
                 }
-              });
+              })
+   .state('orders', {
+            url: '/orders',
+            views: {
+            'container': {
+              templateUrl: "/assets/angular/views/orders/index.html",
+              controller: 'ProductController'
+              }
+            }
+          })
+        .state('orders.placeOrder', {
+            url: '/placeOrder/:id',
+            views: {
+            'container': {
+              templateUrl: "/assets/angular/views/orders/place_order.html",
+              controller: 'PlaceOrderController'
+              }
+            }
+          })
+         .state('orders.orders_list', {
+                  url: '/orders_list',
+                  views: {
+                  'container': {
+                    templateUrl: "/assets/angular/views/orders/orders_list.html",
+                    controller: 'ListOrderController'
+                    }
+                  }
+                })
 
 });

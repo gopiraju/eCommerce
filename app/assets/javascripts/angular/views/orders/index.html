@@ -1,12 +1,12 @@
-<h3>Welcome to your dashboard<a class="btn btn-default pull-right" ui-sref=".create"><span class="glyphicon glyphicon-plus"></span>&nbsp;Create new</a></h3>
+<h3>Welcome to your dashboard<a class="btn btn-default pull-right" ui-sref=".orders_list"><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp; Orders</a></h3>
+ <div ng-controller="ProductController">
   <table class="table table-hover table-striped table-bordered">
     <thead align="center">
         <tr class="info">
             <td>Name</td>
             <td>Description</td>
             <td>Price</td>
-            <td>Edit</td>
-            <td>Delete</td>
+            <td>Place Order</td>
         </tr>
     </thead>
     <tbody align="center">
@@ -14,16 +14,10 @@
             <td>{{ product.name }}</td>
             <td>{{ product.description }}</td>
             <td>{{ product.price }}</td>
-            <td><a ui-sref=".edit({ id : product.id  })"> 
+            <td><a ui-sref=".placeOrder({ id : product.id  })"> 
                     <button  class="btn"  class="btn btn-primary btn-lg">
-                        <span class="glyphicon glyphicon-edit"></span>
+                        <span class="glyphicon glyphicon-shopping-cart"></span>
                      </button>
-                </a>
-            </td>
-            <td><a ui-sref=".delete({ id : product.id  })" >
-                    <button  class="btn"  class="btn btn-primary btn-lg">
-                       <span class="glyphicon glyphicon-trash"></span>
-                    </button>
                 </a>
             </td>
         </tr>

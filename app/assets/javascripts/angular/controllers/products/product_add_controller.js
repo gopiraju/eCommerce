@@ -1,5 +1,4 @@
 angular.module('eCommerce').controller('addController', function($scope, $modal, $log, $state) {
-    console.log("OOOOOOOOOOOOOOOOOOOOO")
    var modalInstance = $modal.open({
       templateUrl: 'AddModalContent.html',
       controller: 'AddModalInstanceCtrl',
