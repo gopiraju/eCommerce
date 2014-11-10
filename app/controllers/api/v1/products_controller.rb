@@ -1,7 +1,7 @@
 class Api::V1::ProductsController < Api::ApiController
-before_filter :authenticate_user! 
+before_filter :authenticate_user!
 	def index
-    @products = Product.all
+    @products = current_user.products
     render json: @products    
 	end
 
@@ -11,7 +11,7 @@ before_filter :authenticate_user!
 	end
 
   def create
-    @product = Product.create(product_params)
+    @product = current_user.products.create(product_params)
     if @product
       render json: @product
     else

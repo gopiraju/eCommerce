@@ -1,60 +1,36 @@
 <script type="text/ng-template" id="ListOrderModalContent.html">
   <div class="modal-header">
-    <h3 class="modal-title">Place Order</h3>
+    <h3 class="modal-title">List Of Order</h3>
   </div>
- 
-       <table class="table table-hover table-striped table-bordered">
-    <thead align="center">
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
+    <table class="table table-hover table-striped table-bordered">
+     <thead align="center">
         <tr>
-            <td>Name</td>
-            <td>Price</td>
+            <td>Order id</td>
+            <td>Product Id</td>
+            <td>Show Product</td>
             <td>Delete Order</td>
         </tr>
-    </thead>
+     </thead>
     <tbody align="center">
-        <tr ng-repeat="product in products">
-            <td>{{ product.name }}</td>
-            <td>{{ product.price }}</td>
-            <td><a ui-sref=".placeOrder({ id : product.id  })"> 
-                    <button  class="btn"  class="btn btn-primary btn-lg">
-                        <span class="glyphicon glyphicon-shopping-cart"></span>
-                     </button>
-                </a>
-            </td>
+        <tr ng-repeat="order in orders_list">
+          <td>{{ order.id }}</td>
+          <td>{{ order.product_id }}</td>
+          <td><button ng-click="delete_order( order.id )">
+                <span  class="glyphicon glyphicon-eye-open"></span>
+              </button>
+          </td>
+          <td><button ng-click="delete_order( order.id )"> 
+              <span style="color:red" class="glyphicon glyphicon-remove-circle"></span>
+              </button>
+          </td>
         </tr>
     </tbody>
-</table>   
+</table> 
+</div>
 <div class="modal-footer">
     <button type="button" class="btn btn-warning" ng-click="cancel()">Close</button>
 </div>   
+<div class="col-md-1"></div>  
 </script>
-
-
-<!-- <h3>Welcome to your dashboard</h3>
- <div ng-controller="ProductController">
-  <table class="table table-hover table-striped table-bordered">
-    <thead align="center">
-        <tr class="info">
-            <td>Name</td>
-            <td>Description</td>
-            <td>Price</td>
-            <td>Delete Order</td>
-        </tr>
-    </thead>
-    <tbody align="center">
-        <tr ng-repeat="product in products">
-            <td>{{ product.name }}</td>
-            <td>{{ product.description }}</td>
-            <td>{{ product.price }}</td>
-            <td><a ui-sref=".placeOrder({ id : product.id  })"> 
-                    <button  class="btn"  class="btn btn-primary btn-lg">
-                        <span class="glyphicon glyphicon-shopping-cart"></span>
-                     </button>
-                </a>
-            </td>
-        </tr>
-    </tbody>
-</table>
-</div>
-<div ui-view="container"></div>
-<div ui-view="container_edit"></div> -->

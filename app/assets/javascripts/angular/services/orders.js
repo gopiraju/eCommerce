@@ -1,5 +1,5 @@
 var myapp = angular.module('eCommerce');
-myapp.factory('orders', ['$http',function($http) {
+myapp.factory('orders', ['$http',function($http, $scope, $stateParams) {
   var get_default = function() {
     return {
         list: [],
@@ -9,16 +9,30 @@ myapp.factory('orders', ['$http',function($http) {
     };
   }
   
-  var place_order = function (products) {
-  console.log("this is testing one")
-    return $http.post('/api/v1/products/',{eCommerce:products}).success(function(response) 
+
+  var get_all_orders = function () {
+    return $http.get('/api/v1/orders/').success(function(response) 
       { 
-        console.log(response)
-        products.list = response
+        orders = response
+        console.log("++++++++++++++List Orders factory+++++++++++++++")
+        console.log(orders)
+        console.log("++++++++++++++++++++++++++++++++++++++++++++++++")
       }).error(function(response) {
       console.log("fail the error")
     });    
-    console.log("add_product_info") 
+  }
+
+
+
+  var place_order = function (orders) {
+    console.log("++++++++++++++from Orders factory+++++++++++++++")
+    console.log(orders)
+    console.log("++++++++++++++++++++++++++++++++++++++++++++++++")
+    return $http.post('/api/v1/orders/',{ product_id:orders }).success(function(response) 
+      { 
+      }).error(function(response) {
+      console.log("fail the error")
+    });    
   }
 
   
@@ -28,7 +42,7 @@ return {
   },
 
   list: {
-    
+    get: get_all_orders
   },
 
   single: {
