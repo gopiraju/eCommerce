@@ -75,4 +75,13 @@ angular.module('eCommerce').config(function($stateProvider, $urlRouterProvider) 
                     }
                   }
                 })
+         .state('orders.show_order', {
+                  url: '/show_order/:order_id',
+                  views: {
+                  'container': {
+                    templateUrl: "/assets/angular/views/orders/orders_list.html",
+                    controller: 'ListOrderController'
+                    }
+                  }
+                })
 });

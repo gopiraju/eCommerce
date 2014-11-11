@@ -17,7 +17,7 @@
         <tr ng-repeat="order in orders_list">
           <td>{{ order.id }}</td>
           <td>{{ order.product_id }}</td>
-          <td><button ng-click="delete_order( order.id )">
+          <td><button ng-click="show_order( order.id )">
                 <span  class="glyphicon glyphicon-eye-open"></span>
               </button>
           </td>
