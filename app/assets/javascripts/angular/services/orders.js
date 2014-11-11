@@ -5,7 +5,7 @@ myapp.factory('orders', ['$http',function($http, $scope, $stateParams) {
         list: [],
         single: {},
         statuses: [],
-        product: {}
+        order: {}
     };
   }
   
@@ -35,6 +35,17 @@ myapp.factory('orders', ['$http',function($http, $scope, $stateParams) {
     });    
   }
 
+  var delete_order = function(order_id){
+    return $http.delete('/api/v1/orders/'+ order_id)
+      .success(function(response){
+    })
+      .error(function(response){
+      console.log("this error messages")
+    });
+  }
+
+
+
   
 return {
   model: {
@@ -49,8 +60,8 @@ return {
     post: place_order       
   },
 
-  product: {
-     
+  order: {
+    delete: delete_order  
   }
 }
 

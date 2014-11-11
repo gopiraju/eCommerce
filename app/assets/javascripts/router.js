@@ -6,8 +6,8 @@ angular.module('eCommerce').config(function($stateProvider, $urlRouterProvider) 
     .state('index', {
             url: '/index',
             views: {
-            'container': {
-              templateUrl: "/assets/angular/views/home/index.html"
+            'register_container': {
+              templateUrl: "/assets/angular/views/index.html"
               }
             }
           })
@@ -51,7 +51,7 @@ angular.module('eCommerce').config(function($stateProvider, $urlRouterProvider) 
    .state('orders', {
             url: '/orders',
             views: {
-            'container': {
+            'ordercontainer': {
               templateUrl: "/assets/angular/views/orders/index.html",
               controller: 'ProductController'
               }
@@ -60,7 +60,7 @@ angular.module('eCommerce').config(function($stateProvider, $urlRouterProvider) 
         .state('orders.placeOrder', {
             url: '/placeOrder/:id',
             views: {
-            'container': {
+            'ordercontainer': {
               templateUrl: "/assets/angular/views/orders/place_order.html",
               controller: 'PlaceOrderController'
               }
@@ -69,7 +69,16 @@ angular.module('eCommerce').config(function($stateProvider, $urlRouterProvider) 
          .state('orders.orders_list', {
                   url: '/orders_list',
                   views: {
-                  'container': {
+                  'ordercontainer': {
+                    templateUrl: "/assets/angular/views/orders/orders_list.html",
+                    controller: 'ListOrderController'
+                    }
+                  }
+                })
+         .state('orders.show_order', {
+                  url: '/show_order/:order_id',
+                  views: {
+                  'ordercontainer': {
                     templateUrl: "/assets/angular/views/orders/orders_list.html",
                     controller: 'ListOrderController'
                     }

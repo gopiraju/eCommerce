@@ -1,8 +1,14 @@
 class Api::V1::ProductsController < Api::ApiController
 before_filter :authenticate_user!
 	def index
-    @products = current_user.products
-    render json: @products    
+    @role = current_user.role
+      if @role.id == 1
+          @products = current_user.products
+          render json: @products  
+        else
+          @products = Product.all
+          render json: @products  
+      end 
 	end
 
   def show
@@ -19,7 +25,7 @@ before_filter :authenticate_user!
     end
   end
 
-  def edit
+   def edit
     @product = Product.find_by_id(params[:id])
     render json: @product 
   end

@@ -24,15 +24,17 @@ angular.module('eCommerce').controller('ListOrderController', function($scope, $
 
 angular.module('eCommerce').controller('ListOrderInstanceController', function($rootScope,  $scope, $state, $stateParams, $modalInstance, orders, orderval) {
       $scope.orders_list = orderval.data
-      $scope.delete_order = function(order_id) {
+        $scope.delete_order = function(order_id) {
         console.log("++++++++++++++++delete order+++++++++++++++++++")
         console.log(order_id)
-      $rootScope.$broadcast('refresh_products');
-      $state.go('orders.orders_list');
-  };
- $scope.cancel = function() {
-    $rootScope.$broadcast('refresh_products');    
+        orders.order.delete(order_id).then(function(response){
+        });
+        $modalInstance.dismiss('cancel');
+        $state.go('orders');
+    };
+ 
+ $scope.cancel = function() {    
     $modalInstance.dismiss('cancel');
-    $state.go("orders")
+        $state.go('orders');
    };
 });

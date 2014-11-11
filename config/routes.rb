@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   
+  get 'orders/index'
+
   devise_for :users
   resources :dashboards
   root to: "homes#index"
-
+  resources :orders
   # authenticated :user do
   #   root to: "dashboards#index"
   # end

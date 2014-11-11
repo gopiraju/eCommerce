@@ -18,7 +18,7 @@ angular.module('eCommerce').controller('editProductController', function($scope,
 });
 
 angular.module('eCommerce').controller('EditModalInstanceController', function($rootScope,  $scope, $state, $stateParams, $modalInstance, productval,products) {
-      $scope.orders_list = productval.data
+      $scope.product = productval.data
       $scope.ok = function (products_data) {
       products.single.put($scope.product.id, $scope.product).then(function(response){
           if(response.status=200){

@@ -7,20 +7,15 @@
     <table class="table table-hover table-striped table-bordered">
      <thead align="center">
         <tr>
-            <td>Order id</td>
-            <td>Product Id</td>
-            <td>Show Product</td>
+            <td>Product Name</td>
+            <td>Product Price</td>
             <td>Delete Order</td>
         </tr>
      </thead>
     <tbody align="center">
         <tr ng-repeat="order in orders_list">
-          <td>{{ order.id }}</td>
-          <td>{{ order.product_id }}</td>
-          <td><button ng-click="delete_order( order.id )">
-                <span  class="glyphicon glyphicon-eye-open"></span>
-              </button>
-          </td>
+          <td>{{ order.name }}</td>
+          <td>{{ order.price }}</td>
           <td><button ng-click="delete_order( order.id )"> 
               <span style="color:red" class="glyphicon glyphicon-remove-circle"></span>
               </button>
