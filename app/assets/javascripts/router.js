@@ -83,5 +83,5 @@ angular.module('eCommerce').config(function($stateProvider, $urlRouterProvider) 
                     controller: 'ListOrderController'
                     }
                   }
-                })
+                });
 });

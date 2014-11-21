@@ -29,6 +29,9 @@
         </tr>
     </tbody>
 </table>
+<div ng-hide="products.length > 0">
+    <div class="alert alert-info" role="alert"><center>No Products Found</center></div>
+</div>
 </div>
 <div ui-view="container"></div>
 <div ui-view="container_edit"></div>
