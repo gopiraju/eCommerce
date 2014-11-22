@@ -14,9 +14,6 @@ myapp.factory('orders', ['$http',function($http, $scope, $stateParams) {
     return $http.get('/api/v1/orders/').success(function(response) 
       { 
         orders = response
-        console.log("++++++++++++++List Orders factory+++++++++++++++")
-        console.log(orders)
-        console.log("++++++++++++++++++++++++++++++++++++++++++++++++")
       }).error(function(response) {
       console.log("fail the error")
     });    
@@ -25,9 +22,6 @@ myapp.factory('orders', ['$http',function($http, $scope, $stateParams) {
 
 
   var place_order = function (orders) {
-    console.log("++++++++++++++from Orders factory+++++++++++++++")
-    console.log(orders)
-    console.log("++++++++++++++++++++++++++++++++++++++++++++++++")
     return $http.post('/api/v1/orders/',{ product_id:orders }).success(function(response) 
       { 
       }).error(function(response) {

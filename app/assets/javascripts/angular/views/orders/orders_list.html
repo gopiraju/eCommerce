@@ -14,8 +14,10 @@
      </thead>
     <tbody align="center">
         <tr ng-repeat="order in orders_list">
+
           <td>{{ order.name }}</td>
           <td>{{ order.price }}</td>
+
           <td><button ng-click="delete_order( order.id )"> 
               <span style="color:red" class="glyphicon glyphicon-remove-circle"></span>
               </button>
@@ -23,6 +25,9 @@
         </tr>
     </tbody>
 </table> 
+<div ng-hide="orders_list.length > 0">
+    <div class="alert alert-info" role="alert"><center>No Orders Found</center></div>
+</div>
 </div>
 <div class="modal-footer">
     <button type="button" class="btn btn-warning" ng-click="cancel()">Close</button>

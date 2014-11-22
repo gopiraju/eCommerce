@@ -1,3 +1,4 @@
+# add roles to user
 class CreateRoles < ActiveRecord::Migration
   def change
     create_table :roles do |t|

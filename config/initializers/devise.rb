@@ -4,7 +4,9 @@ Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
-  # config.secret_key = '1c7980b2819f112ca731314f28b3456518fcedc55538dc705573b3cafd140f456bfcbe926178ee619a965bce4f42a60cc04645e2f023c149608917271257d705'
+  # config.secret_key =
+  # '1c7980b2819f112ca731314f28b3456518fcedc55538dc705573b3cafd140
+  # f456bfcbe926178ee619a965bce4f42a60cc04645e2f023c149608917271257d705'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -26,30 +28,33 @@ Devise.setup do |config|
   # just :email. You can configure it to use [:username, :subdomain], so for
   # authenticating a user, both parameters are required. Remember that those
   # parameters are used only when authenticating and not when retrieving from
-  # session. If you need permissions, you should implement that in a before filter.
+  # session.If you need permissions, you should implement thatin before filter.
   # You can also supply a hash where the value is a boolean determining whether
   # or not authentication should be aborted when the value is not present.
   # config.authentication_keys = [ :email ]
 
-  # Configure parameters from the request object used for authentication. Each entry
+  # Configure parameters from the request object used for authentication
   # given should be a request method and it will automatically be passed to the
-  # find_for_authentication method and considered in your model lookup. For instance,
-  # if you set :request_keys to [:subdomain], :subdomain will be used on authentication.
-  # The same considerations mentioned for authentication_keys also apply to request_keys.
+  # find_for_authentication method and considered in your model lookup.
+  # if you set :request_keys to [:subdomain], :subdomain will be used on
+  # authentication.
+  # The same considerations mentioned for authentication_keys also apply to
+  # request_keys.
   # config.request_keys = []
 
   # Configure which authentication keys should be case-insensitive.
   # These keys will be downcased upon creating or modifying a user and when used
   # to authenticate or find a user. Default is :email.
-  config.case_insensitive_keys = [ :email ]
+  config.case_insensitive_keys = [:email]
 
   # Configure which authentication keys should have whitespace stripped.
   # These keys will have whitespace before and after removed upon creating or
-  # modifying a user and when used to authenticate or find a user. Default is :email.
-  config.strip_whitespace_keys = [ :email ]
+  # modifying a user and when used to authenticate or find a user.
+  # Default is :email.
+  config.strip_whitespace_keys = [:email]
 
   # Tell if authentication through request.params is enabled. True by default.
-  # It can be set to an array that will enable params authentication only for the
+  # It can be set to an array that will enable params authentication only forthe
   # given strategies, for example, `config.params_authenticatable = [:database]` will
   # enable it only for database (email + password) authentication.
   # config.params_authenticatable = true
@@ -97,7 +102,9 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = '49cb00200f3a7fda1403bc46aa2de803aa9e4260ef48b805a10d8fd3a80be9593c704e3415421aa762c10800495f4dc15971ebc8e8e4ff67bef83c23d5980436'
+  # config.pepper =
+  # '49cb00200f3a7fda1403bc46aa2de803aa9e4260ef48b805a10d8fd3a80be959
+  # 3c704e3415421aa762c10800495f4dc15971ebc8e8e4ff67bef83c23d5980436'
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without

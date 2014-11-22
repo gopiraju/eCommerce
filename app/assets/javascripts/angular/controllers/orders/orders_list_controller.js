@@ -1,9 +1,6 @@
 angular.module('eCommerce').controller('ListOrderController', function($scope, $modal, $log, $state,  orders) {
       orders.list.get().then(function(response){
       $scope.orders_list = response.data
-      console.log("+++++++++++++++++++++ListOrderController++++++++++++++++++++++++")
-      console.log($scope.orders_list)
-      console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
   var modalInstance = $modal.open({
       templateUrl: 'ListOrderModalContent.html',
       controller: 'ListOrderInstanceController',
@@ -25,8 +22,6 @@ angular.module('eCommerce').controller('ListOrderController', function($scope, $
 angular.module('eCommerce').controller('ListOrderInstanceController', function($rootScope,  $scope, $state, $stateParams, $modalInstance, orders, orderval) {
       $scope.orders_list = orderval.data
         $scope.delete_order = function(order_id) {
-        console.log("++++++++++++++++delete order+++++++++++++++++++")
-        console.log(order_id)
         orders.order.delete(order_id).then(function(response){
         });
         $modalInstance.dismiss('cancel');

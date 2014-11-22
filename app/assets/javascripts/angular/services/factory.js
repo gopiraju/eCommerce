@@ -31,7 +31,6 @@ var add_product_info = function (products) {
   }
 
   var edit_product = function(product){
-    //console.log("*********from factory********")
     return $http.get('/api/v1/products/'+ product)
       .success(function(response){
       console.log("From Facrory")

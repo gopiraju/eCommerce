@@ -1,21 +1,20 @@
 Rails.application.routes.draw do
-  
-  get 'orders/index'
 
+  get 'orders/index'
   devise_for :users
   resources :dashboards
-  root to: "homes#index"
+  root to: 'homes#index'
   resources :orders
   # authenticated :user do
   #   root to: "dashboards#index"
   # end
 
-namespace :api do
-   namespace :v1 do
-     resources :products
-     resources :orders
+  namespace :api do
+    namespace :v1 do
+      resources :products
+      resources :orders
+    end
   end
-end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
