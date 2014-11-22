@@ -20,7 +20,6 @@ default: &default
 development:
   <<: *default
   database: ecommerce-v2_development
-
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
@@ -50,5 +49,9 @@ test:
 production:
   <<: *default
   database: ecommerce_production
+<<<<<<< HEAD
   username: ecommerce-v2
+=======
+  username: ecommerce
+>>>>>>> a570831f9344b7a6a070cb0fcf0a5f57dd185eb4
   password: <%= ENV['ECOMMERCE_DATABASE_PASSWORD'] %>
